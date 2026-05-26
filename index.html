@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmos | Cybersecurity Professional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@200;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-trail"></div>
+
+  <!-- Animated background grid -->
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+
+  <!-- ═══════════════════════════════════ NAV ═══════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">COSMOS</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" data-team="blue">About</a></li>
+      <li><a href="#skills" data-team="red">Skills</a></li>
+      <li><a href="#projects" data-team="purple">Projects</a></li>
+      <li><a href="#certifications" data-team="blue">Certs</a></li>
+      <li><a href="#education" data-team="red">Education</a></li>
+      <li><a href="#blog" data-team="purple">Articles</a></li>
+      <li><a href="#contact" data-team="blue">Contact</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span class="status-text">Available for hire</span>
+    </div>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </nav>
+
+  <!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-left">
+      <div class="team-badges">
+        <span class="badge blue-team">BLUE TEAM</span>
+        <span class="badge red-team">RED TEAM</span>
+        <span class="badge purple-team">PURPLE TEAM</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="glitch" data-text="COSMOS">COSMOS</span>
+      </h1>
+      <div class="hero-role">
+        <span class="role-prefix">~/</span>
+        <span class="typewriter" id="typewriter"></span>
+        <span class="cursor-blink">▮</span>
+      </div>
+      <p class="hero-desc">
+        Defending, breaking, and understanding systems. I operate across all three domains — detection &amp; defense, offensive testing, and bridging the gap between them.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Hire Me</a>
+        <a href="#projects" class="btn btn-outline">View Work</a>
+        <a href="#" class="btn btn-ghost" download>Download CV</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="20">0</span><span class="stat-label">Projects</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="8">0</span><span class="stat-label">Certifications</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="15">0</span><span class="stat-label">Articles</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hex-container">
+        <div class="hex-ring ring-1"></div>
+        <div class="hex-ring ring-2"></div>
+        <div class="hex-ring ring-3"></div>
+        <div class="hex-avatar">
+          <div class="avatar-placeholder">
+            <span class="avatar-icon">◈</span>
+          </div>
+        </div>
+        <div class="orbit-dot dot-blue"></div>
+        <div class="orbit-dot dot-red"></div>
+        <div class="orbit-dot dot-purple"></div>
+      </div>
+      <div class="terminal-widget">
+        <div class="terminal-bar">
+          <span class="t-dot red"></span>
+          <span class="t-dot yellow"></span>
+          <span class="t-dot green"></span>
+          <span class="t-title">cosmos@kali:~$</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="t-prompt">$</span> whoami</p>
+          <p class="t-out">cybersecurity_professional</p>
+          <p><span class="t-prompt">$</span> cat skills.txt</p>
+          <p class="t-out blue-c">[ Blue Team ] SOC · SIEM · Incident Response</p>
+          <p class="t-out red-c">[ Red Team  ] Pentest · Exploit · Recon</p>
+          <p class="t-out purple-c">[ Purple    ] Threat Hunt · CTI · Forensics</p>
+          <p><span class="t-prompt">$</span> <span class="blink-cursor">▮</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ ABOUT ═══════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="section-header">
+      <span class="section-tag blue-tag">// 01</span>
+      <h2 class="section-title">About <span class="accent-blue">Me</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a cybersecurity professional who operates across the full spectrum — from defending infrastructure to simulating real-world attacks. My mindset is simple: <span class="highlight-purple">understand the attacker to defeat them.</span></p>
+        <p>With a foundation built on continuous learning, hands-on labs, and real-world application, I bring both the technical depth and strategic thinking that modern cybersecurity demands.</p>
+        <p>I believe in <span class="highlight-red">knowledge sharing</span> — which is why I write articles breaking down complex security topics into practical, digestible insights.</p>
+        <div class="about-info-grid">
+          <div class="info-item"><span class="info-label">Location</span><span class="info-val">Tashkent, Uzbekistan</span></div>
+          <div class="info-item"><span class="info-label">Focus</span><span class="info-val">Penetration Testing</span></div>
+          <div class="info-item"><span class="info-label">Status</span><span class="info-val green-text">Open to Work</span></div>
+          <div class="info-item"><span class="info-label">Languages</span><span class="info-val">Uzbek, Russian, English</span></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="team-cards">
+          <div class="team-card blue-card">
+            <div class="tc-icon">🛡</div>
+            <h4>Blue Team</h4>
+            <p>Detection, defense, monitoring, and incident response. Keeping systems safe.</p>
+          </div>
+          <div class="team-card red-card">
+            <div class="tc-icon">⚔</div>
+            <h4>Red Team</h4>
+            <p>Offensive security, penetration testing, vulnerability exploitation.</p>
+          </div>
+          <div class="team-card purple-card">
+            <div class="tc-icon">◈</div>
+            <h4>Purple Team</h4>
+            <p>Bridging offense and defense. Threat hunting and intelligence-driven testing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ SKILLS ═══════════════════════════════════ -->
+  <section id="skills" class="section section-alt">
+    <div class="section-header">
+      <span class="section-tag red-tag">// 02</span>
+      <h2 class="section-title">Skills &amp; <span class="accent-red">Tools</span></h2>
+      <div class="section-line red-line"></div>
+    </div>
+    <div class="skills-container">
+      <div class="skills-category">
+        <h3 class="cat-title blue-cat"><span class="cat-icon">🛡</span> Blue Team</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">SIEM / Splunk</span>
+          <span class="skill-tag">Wireshark</span>
+          <span class="skill-tag">Snort / Suricata</span>
+          <span class="skill-tag">Incident Response</span>
+          <span class="skill-tag">Log Analysis</span>
+          <span class="skill-tag">SOC Operations</span>
+          <span class="skill-tag">Threat Detection</span>
+          <span class="skill-tag">Firewall Config</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <h3 class="cat-title red-cat"><span class="cat-icon">⚔</span> Red Team</h3>
+        <div class="skill-tags">
+          <span class="skill-tag rt">Kali Linux</span>
+          <span class="skill-tag rt">Metasploit</span>
+          <span class="skill-tag rt">Nmap</span>
+          <span class="skill-tag rt">Burp Suite</span>
+          <span class="skill-tag rt">OSINT</span>
+          <span class="skill-tag rt">SQLi / XSS</span>
+          <span class="skill-tag rt">Password Cracking</span>
+          <span class="skill-tag rt">Wireless Attacks</span>
+        </div>
+      </div>
+      <div class="skills-category">
+        <h3 class="cat-title purple-cat"><span class="cat-icon">◈</span> Purple Team &amp; General</h3>
+        <div class="skill-tags">
+          <span class="skill-tag pt">Threat Hunting</span>
+          <span class="skill-tag pt">MITRE ATT&amp;CK</span>
+          <span class="skill-tag pt">Forensics</span>
+          <span class="skill-tag pt">Python</span>
+          <span class="skill-tag pt">Bash Scripting</span>
+          <span class="skill-tag pt">Vulnerability Mgmt</span>
+          <span class="skill-tag pt">CTI</span>
+          <span class="skill-tag pt">Report Writing</span>
+        </div>
+      </div>
+    </div>
+    <div class="proficiency-bars">
+      <h3 class="bars-title">Core Proficiency</h3>
+      <div class="bar-item">
+        <div class="bar-label"><span>Network Security</span><span class="bar-pct">90%</span></div>
+        <div class="bar-track"><div class="bar-fill blue-fill" style="--w:90%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>Penetration Testing</span><span class="bar-pct">80%</span></div>
+        <div class="bar-track"><div class="bar-fill red-fill" style="--w:80%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>Threat Intelligence</span><span class="bar-pct">75%</span></div>
+        <div class="bar-track"><div class="bar-fill purple-fill" style="--w:75%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>Python / Scripting</span><span class="bar-pct">70%</span></div>
+        <div class="bar-track"><div class="bar-fill blue-fill" style="--w:70%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label"><span>Digital Forensics</span><span class="bar-pct">65%</span></div>
+        <div class="bar-track"><div class="bar-fill purple-fill" style="--w:65%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ PROJECTS ═══════════════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="section-header">
+      <span class="section-tag purple-tag">// 03</span>
+      <h2 class="section-title">Featured <span class="accent-purple">Projects</span></h2>
+      <div class="section-line purple-line"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card" data-team="blue">
+        <div class="pc-header">
+          <span class="pc-tag blue-tag-sm">Blue Team</span>
+          <div class="pc-links">
+            <a href="#" class="pc-link">GitHub ↗</a>
+          </div>
+        </div>
+        <h3 class="pc-title">Home SOC Lab</h3>
+        <p class="pc-desc">Built a fully functional Security Operations Center home lab using Splunk, Elastic Stack, and simulated attack scenarios with Kali Linux.</p>
+        <div class="pc-tech">
+          <span>Splunk</span><span>Elastic</span><span>Kali</span><span>VirtualBox</span>
+        </div>
+      </div>
+      <div class="project-card" data-team="red">
+        <div class="pc-header">
+          <span class="pc-tag red-tag-sm">Red Team</span>
+          <div class="pc-links">
+            <a href="#" class="pc-link">GitHub ↗</a>
+          </div>
+        </div>
+        <h3 class="pc-title">Wireless Pentest Framework</h3>
+        <p class="pc-desc">Developed a wireless security testing toolkit using Aircrack-ng suite, TP-Link adapter with custom RTL8188EUS drivers on Kali Linux.</p>
+        <div class="pc-tech">
+          <span>Aircrack-ng</span><span>Python</span><span>Kali</span><span>Monitor Mode</span>
+        </div>
+      </div>
+      <div class="project-card" data-team="purple">
+        <div class="pc-header">
+          <span class="pc-tag purple-tag-sm">Purple Team</span>
+          <div class="pc-links">
+            <a href="#" class="pc-link">GitHub ↗</a>
+          </div>
+        </div>
+        <h3 class="pc-title">Threat Hunt Playbooks</h3>
+        <p class="pc-desc">Created a collection of threat hunting playbooks mapped to MITRE ATT&amp;CK framework for detecting common adversary techniques.</p>
+        <div class="pc-tech">
+          <span>MITRE ATT&amp;CK</span><span>KQL</span><span>SIGMA</span><span>Python</span>
+        </div>
+      </div>
+      <div class="project-card" data-team="blue">
+        <div class="pc-header">
+          <span class="pc-tag blue-tag-sm">Blue Team</span>
+          <div class="pc-links">
+            <a href="#" class="pc-link">GitHub ↗</a>
+          </div>
+        </div>
+        <h3 class="pc-title">Incident Response Toolkit</h3>
+        <p class="pc-desc">Python-based toolkit for rapid incident response — log collection, triage, evidence preservation, and automated reporting.</p>
+        <div class="pc-tech">
+          <span>Python</span><span>Bash</span><span>DFIR</span><span>Volatility</span>
+        </div>
+      </div>
+      <div class="project-card" data-team="red">
+        <div class="pc-header">
+          <span class="pc-tag red-tag-sm">Red Team</span>
+          <div class="pc-links">
+            <a href="#" class="pc-link">GitHub ↗</a>
+          </div>
+        </div>
+        <h3 class="pc-title">CTF Write-ups Collection</h3>
+        <p class="pc-desc">Documented 30+ Capture The Flag challenge solutions covering web exploitation, reverse engineering, cryptography, and forensics.</p>
+        <div class="pc-tech">
+          <span>HackTheBox</span><span>TryHackMe</span><span>CTF</span><span>OSCP prep</span>
+        </div>
+      </div>
+      <div class="project-card" data-team="purple">
+        <div class="pc-header">
+          <span class="pc-tag purple-tag-sm">Purple Team</span>
+          <div class="pc-links">
+            <a href="#" class="pc-link">GitHub ↗</a>
+          </div>
+        </div>
+        <h3 class="pc-title">OSINT Recon Automation</h3>
+        <p class="pc-desc">Automated OSINT tool that aggregates data from multiple sources — Shodan, WHOIS, DNS records — into actionable intelligence reports.</p>
+        <div class="pc-tech">
+          <span>Python</span><span>Shodan API</span><span>OSINT</span><span>Recon-ng</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ CERTIFICATIONS ═══════════════════════════════════ -->
+  <section id="certifications" class="section section-alt">
+    <div class="section-header">
+      <span class="section-tag blue-tag">// 04</span>
+      <h2 class="section-title">Certifi<span class="accent-blue">cations</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-badge" style="--clr: var(--blue)">★</div>
+        <div class="cert-info">
+          <h4>CompTIA Security+</h4>
+          <span class="cert-org">CompTIA</span>
+          <span class="cert-status earned">Earned</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="--clr: var(--red)">★</div>
+        <div class="cert-info">
+          <h4>eJPT — eLearnSecurity</h4>
+          <span class="cert-org">eLearnSecurity</span>
+          <span class="cert-status earned">Earned</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="--clr: var(--purple)">★</div>
+        <div class="cert-info">
+          <h4>Google Cybersecurity Certificate</h4>
+          <span class="cert-org">Google / Coursera</span>
+          <span class="cert-status earned">Earned</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="--clr: var(--blue)">◉</div>
+        <div class="cert-info">
+          <h4>OSCP</h4>
+          <span class="cert-org">Offensive Security</span>
+          <span class="cert-status in-progress">In Progress</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="--clr: var(--red)">◉</div>
+        <div class="cert-info">
+          <h4>CEH — Certified Ethical Hacker</h4>
+          <span class="cert-org">EC-Council</span>
+          <span class="cert-status in-progress">In Progress</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="--clr: var(--purple)">◉</div>
+        <div class="cert-info">
+          <h4>CompTIA CySA+</h4>
+          <span class="cert-org">CompTIA</span>
+          <span class="cert-status planned">Planned</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ EDUCATION ═══════════════════════════════════ -->
+  <section id="education" class="section">
+    <div class="section-header">
+      <span class="section-tag red-tag">// 05</span>
+      <h2 class="section-title">Edu<span class="accent-red">cation</span></h2>
+      <div class="section-line red-line"></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot blue-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2022 — Present</span>
+          <h4>Bachelor's in Cybersecurity</h4>
+          <p class="tl-org">University Name · Tashkent, Uzbekistan</p>
+          <p class="tl-desc">Focused on network security, ethical hacking, cryptography, and digital forensics. Active member of the cybersecurity club.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot red-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2023</span>
+          <h4>Penetration Testing Bootcamp</h4>
+          <p class="tl-org">TryHackMe / HackTheBox</p>
+          <p class="tl-desc">Completed 200+ hours of hands-on offensive security training. Top 5% ranking on TryHackMe platform.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot purple-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2023 — Present</span>
+          <h4>Self-Study: Threat Intelligence &amp; Purple Teaming</h4>
+          <p class="tl-org">Independent Research</p>
+          <p class="tl-desc">Deep-dive into MITRE ATT&amp;CK, threat actor profiling, adversary emulation, and purple team methodologies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ BLOG ═══════════════════════════════════ -->
+  <section id="blog" class="section section-alt">
+    <div class="section-header">
+      <span class="section-tag purple-tag">// 06</span>
+      <h2 class="section-title">Latest <span class="accent-purple">Articles</span></h2>
+      <div class="section-line purple-line"></div>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card featured-post">
+        <div class="blog-meta">
+          <span class="blog-tag blue-tag-sm">Blue Team</span>
+          <span class="blog-date">May 2026</span>
+        </div>
+        <h3 class="blog-title">Building a Home SOC Lab: From Zero to Detection</h3>
+        <p class="blog-excerpt">A practical, step-by-step guide to setting up your own Security Operations Center at home — including Splunk, log ingestion, and your first real alert.</p>
+        <a href="#" class="blog-read-more">Read Article →</a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-meta">
+          <span class="blog-tag red-tag-sm">Red Team</span>
+          <span class="blog-date">April 2026</span>
+        </div>
+        <h3 class="blog-title">Wireless Hacking: Understanding WPA2 Vulnerabilities</h3>
+        <p class="blog-excerpt">Deep dive into how WPA2 handshake captures work, the tools involved, and how defenders can protect against these attacks.</p>
+        <a href="#" class="blog-read-more">Read Article →</a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-meta">
+          <span class="blog-tag purple-tag-sm">Purple Team</span>
+          <span class="blog-date">March 2026</span>
+        </div>
+        <h3 class="blog-title">MITRE ATT&CK: A Practical Field Guide</h3>
+        <p class="blog-excerpt">How to actually use the MITRE ATT&amp;CK framework day-to-day — not just theory, but real detection and hunting use cases.</p>
+        <a href="#" class="blog-read-more">Read Article →</a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-meta">
+          <span class="blog-tag blue-tag-sm">Blue Team</span>
+          <span class="blog-date">February 2026</span>
+        </div>
+        <h3 class="blog-title">Incident Response: The First 60 Minutes</h3>
+        <p class="blog-excerpt">What to do when you get the call. A practical checklist and mindset guide for your first hour during a live security incident.</p>
+        <a href="#" class="blog-read-more">Read Article →</a>
+      </article>
+    </div>
+    <div class="blog-cta">
+      <a href="#" class="btn btn-outline">View All Articles →</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ CONTACT ═══════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="section-header">
+      <span class="section-tag blue-tag">// 07</span>
+      <h2 class="section-title">Get In <span class="accent-blue">Touch</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-left">
+        <p class="contact-intro">Whether you have a job opportunity, a collaboration idea, or just want to talk cybersecurity — my inbox is open.</p>
+        <div class="contact-links">
+          <a href="mailto:your@email.com" class="contact-item">
+            <span class="ci-icon">✉</span>
+            <span>your@email.com</span>
+          </a>
+          <a href="https://linkedin.com" class="contact-item" target="_blank">
+            <span class="ci-icon">in</span>
+            <span>LinkedIn Profile</span>
+          </a>
+          <a href="https://github.com" class="contact-item" target="_blank">
+            <span class="ci-icon">⌥</span>
+            <span>GitHub Profile</span>
+          </a>
+          <a href="https://tryhackme.com" class="contact-item" target="_blank">
+            <span class="ci-icon">⚡</span>
+            <span>TryHackMe Profile</span>
+          </a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Job opportunity / Collaboration...">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Tell me what you have in mind..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Send Message ↗</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ FOOTER ═══════════════════════════════════ -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">COSMOS</span>
+        <span class="logo-bracket">]</span>
+      </div>
+      <p class="footer-tagline">Defend · Attack · Understand</p>
+      <div class="footer-teams">
+        <span class="ft blue-ft">● Blue</span>
+        <span class="ft red-ft">● Red</span>
+        <span class="ft purple-ft">● Purple</span>
+      </div>
+      <p class="footer-copy">© 2026 Cosmos. Built with Apache &amp; passion for security.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
