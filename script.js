@@ -2,6 +2,33 @@
 //   COSMOS — CYBERSECURITY PORTFOLIO  |  script.js
 // ═══════════════════════════════════════════════════════
 
+/* ── Telegram notifier ──
+   NOTE: token is visible in client-side code. See WARNING in chat. */
+const TELEGRAM = {
+  token:  '8887536534:AAF376_pWrbrOartzCe-ks76AhXZjzclOhs',
+  chatId: '1402989954',
+};
+
+function escapeHtml(s) {
+  return String(s).replace(/[<>&]/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]));
+}
+
+async function sendToTelegram(text) {
+  const res = await fetch(`https://api.telegram.org/bot${TELEGRAM.token}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: TELEGRAM.chatId,
+      text,
+      parse_mode: 'HTML',
+      disable_web_page_preview: true,
+    }),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.ok) throw new Error(data.description || `Telegram error ${res.status}`);
+  return data;
+}
+
 /* ── Custom Cursor ── */
 const cursor      = document.querySelector('.cursor');
 const cursorTrail = document.querySelector('.cursor-trail');
@@ -142,24 +169,84 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(s => sectionObserver.observe(s));
 
-/* ── Contact form ── */
+/* ── Footer subscribe form → Telegram ── */
+const subForm = document.getElementById('subscribeForm');
+if (subForm) {
+  subForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const input = document.getElementById('subEmail');
+    const msg   = document.getElementById('subscribeMsg');
+    const btn   = subForm.querySelector('button[type="submit"]');
+    const email = input.value.trim();
+    const original = btn.textContent;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    msg.textContent = '';
+
+    const text =
+      `📬 <b>New email subscriber</b>\n` +
+      `✉️ <b>Email:</b> ${escapeHtml(email)}\n` +
+      `🌐 <b>Page:</b> ${escapeHtml(location.href)}`;
+
+    try {
+      await sendToTelegram(text);
+      msg.textContent = '✓ Thanks! I\'ll be in touch.';
+      msg.style.color = '#00ff88';
+      subForm.reset();
+    } catch (err) {
+      msg.textContent = '✗ Could not send. Please try again later.';
+      msg.style.color = 'var(--red)';
+      console.error(err);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = original;
+    }
+  });
+}
+
+/* ── Contact form → Telegram ── */
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     const original = btn.textContent;
-    btn.textContent = 'Message Sent ✓';
-    btn.style.background = 'linear-gradient(135deg,#00ff88,#00c8ff)';
-    btn.style.color = '#000';
+
+    const name    = (document.getElementById('name')    || {}).value || '';
+    const email   = (document.getElementById('email')   || {}).value || '';
+    const subject = (document.getElementById('subject') || {}).value || '';
+    const message = (document.getElementById('message') || {}).value || '';
+
     btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = original;
+    btn.textContent = 'Sending…';
+
+    const text =
+      `📨 <b>New contact message</b>\n` +
+      `👤 <b>Name:</b> ${escapeHtml(name)}\n` +
+      `✉️ <b>Email:</b> ${escapeHtml(email)}\n` +
+      `📌 <b>Subject:</b> ${escapeHtml(subject || '—')}\n` +
+      `💬 <b>Message:</b>\n${escapeHtml(message)}`;
+
+    try {
+      await sendToTelegram(text);
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = 'linear-gradient(135deg,#00ff88,#00c8ff)';
+      btn.style.color = '#000';
+      form.reset();
+    } catch (err) {
+      btn.textContent = 'Failed — try again';
       btn.style.background = '';
       btn.style.color = '';
-      btn.disabled = false;
-      form.reset();
-    }, 3000);
+      console.error(err);
+    } finally {
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.disabled = false;
+      }, 3000);
+    }
   });
 }
 

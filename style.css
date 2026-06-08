@@ -670,6 +670,36 @@ footer {
 .purple-ft { color:var(--purple); }
 .footer-copy { font-size:0.8rem; color:var(--text-faint); }
 
+/* ── Footer subscribe ── */
+.footer-subscribe {
+  max-width:520px; margin:0 auto 2.5rem;
+  padding:1.8rem; border:1px solid var(--border);
+  border-radius:var(--radius-lg); background:var(--surface);
+}
+.subscribe-title {
+  font-family:var(--font-head); font-weight:700; font-size:1.3rem;
+  margin-bottom:0.4rem;
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.subscribe-sub { font-size:0.9rem; color:var(--text-dim); margin-bottom:1.2rem; }
+.subscribe-row { display:flex; gap:0.6rem; }
+.subscribe-row input {
+  flex:1; background:var(--bg); border:1px solid var(--border);
+  border-radius:var(--radius); padding:0.8rem 1rem;
+  color:var(--text); font-family:var(--font-body); font-size:0.95rem;
+  transition:var(--transition);
+}
+.subscribe-row input:focus {
+  outline:none; border-color:var(--blue); box-shadow:0 0 0 3px var(--blue-glow);
+}
+.subscribe-row .btn { white-space:nowrap; }
+.subscribe-msg { min-height:1.2rem; margin-top:0.8rem; font-size:0.85rem; font-family:var(--font-mono); }
+@media (max-width:520px) {
+  .subscribe-row { flex-direction:column; }
+  .subscribe-row .btn { justify-content:center; }
+}
+
 /* ── SCROLL REVEAL ── */
 .reveal {
   opacity:0; transform:translateY(30px);
