@@ -541,7 +541,7 @@ img { max-width: 100%; }
 .pc-tech span { font-family:var(--font-mono); font-size:0.7rem; color:var(--text-faint); background:var(--bg3); padding:0.2rem 0.5rem; border-radius:2px; }
 
 /* ── CERTIFICATIONS ── */
-.certs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.certs-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
 .cert-card {
   display:flex; align-items:center; gap:1.2rem;
   background:var(--surface); border:1px solid var(--border);
@@ -558,7 +558,7 @@ img { max-width: 100%; }
   box-shadow:0 0 15px color-mix(in srgb, var(--clr) 30%, transparent);
 }
 .cert-info { flex:1; }
-.cert-info h4 { font-family:var(--font-head); font-size:0.95rem; font-weight:700; margin-bottom:0.2rem; }
+.cert-info h3 { font-family:var(--font-head); font-size:0.95rem; font-weight:700; margin-bottom:0.2rem; }
 .cert-org { display:block; font-size:0.8rem; color:var(--text-faint); margin-bottom:0.3rem; font-family:var(--font-mono); }
 .cert-status {
   font-family:var(--font-mono); font-size:0.68rem;
@@ -613,9 +613,10 @@ img { max-width: 100%; }
 .blog-cta { text-align:center; margin-top:1rem; padding:0 3rem; }
 
 /* ── CONTACT ── */
-.contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:4rem; align-items:start; }
-.contact-intro { font-size:1.05rem; color:var(--text-dim); margin-bottom:2rem; line-height:1.8; }
-.contact-links { display:flex; flex-direction:column; gap:0.8rem; }
+.contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:4rem; align-items:stretch; }
+.contact-left { display:flex; flex-direction:column; }
+.contact-subtitle { font-size:1.05rem; color:var(--text-dim); margin-bottom:3rem; line-height:1.8; max-width:640px; }
+.contact-links { display:flex; flex-direction:column; flex:1; justify-content:space-between; gap:0.8rem; }
 .contact-item {
   display:flex; align-items:center; gap:1rem;
   padding:0.9rem 1.2rem;
@@ -745,4 +746,28 @@ footer {
   .featured-post { grid-column:span 1; }
   .contact-grid  { grid-template-columns:1fr; }
   .hero-stats    { gap:1rem; }
+}
+
+
+/* ── Accessibility / polish additions ── */
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -5rem;
+  z-index: 10000;
+  padding: .65rem 1rem;
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--blue);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+}
+.skip-link:focus { top: 1rem; }
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+@media (hover: none), (pointer: coarse) {
+  body { cursor: auto; }
+  .cursor, .cursor-trail { display: none; }
 }
